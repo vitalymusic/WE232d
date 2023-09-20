@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <h1>Формы</h1>
+    <form action="" method="POST">
+        <!-- Поля для ввода -->
+        <fieldset>
+            <legend>Данные о пользователе:</legend>
+            <input type="text" name="username" maxlength="10" minlength="3">
+            <input type="password" name="pass" >
+            <input type="date">
+            <input type="time">
+            <input type="color">
+        </fieldset>
+        <fieldset>  
+            <input type="checkbox" name="check" value="ok">
+            <input type="file" >
+            <input type="hidden">
+            <input type="number" max="10" min="-10" step=".5" >
+            <input type="email">
+            <input type="search">
+            <input type="reset"> 
+            <input type="radio" >   
+            <input type="button">
+            <input type="range" name="volume" max="500" min="0">
+            <input type="url">
+            <input type="image" src="./preview.jpg" height="100px">
+            <input type="phone" pattern="[0-9]{8}">
+        </fieldset>
+        <label>
+            Введите ваше имя:
+            <input type="text">
+        </label>
+        
+        <fieldset>
+            <legend>
+                Выпадающие списки:
+            </legend>
+
+            <select name="cars" id="">
+                <option value=""></option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Audi" selected>Audi</option>
+                <optgroup label="Swedish Cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                  </optgroup>
+            </select>
+        </fieldset>
+        <fieldset>
+            <textarea name="text" id="" cols="30" rows="10" placeholder="напишите о себе"></textarea>
+        </fieldset>
+        <input type="submit" value="send data">
+    </form>
+    <h1>Форма поиска в Гугл</h1>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q" id="">
+        <input type="submit" value="искать в Google">
+    </form>
+</body>
+</html>

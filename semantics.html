@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semantics</title>
+    <style>
+        
+            body{
+                background-color: #b9b9b9;
+                width: 75%;
+                margin: 0px auto;
+            }
+            header{
+                background-color: brown !important;
+            }
+            div.images{
+                /* выбирает все DIV с классом images */
+                background-color: cornsilk;
+            }
+            .form{
+                /* выбирает все 'элементы' с классом form */
+                background-color: rgb(7, 43, 220);
+            }  
+            
+            div.images img{
+                height: 300px;
+                width: 200px;
+                border: 2px solid white;
+            }
+            
+            section{
+                border-top: 3px solid red;
+                border-bottom: 3px solid green;
+                margin:20px;
+                height: 500px;
+
+            }
+
+            section#sec2{
+                background-color: #f9167c;
+            }
+            section#sec2 .form{
+                background-color: transparent;
+            }
+            h1,h2{
+                color: white;
+            }
+
+            header{
+                /* внешние отступы */
+
+                margin:50px;
+                margin:50px 20px;
+                margin: 10px 20px 30px 40px;
+                padding: 30px;
+                padding:50px 20px;
+                padding: 10px 20px 30px 40px;
+                width: 26%;
+                margin:50px auto;
+            }
+    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <header>
+        <header style="background-color: cadetblue;">
             <h1>Learn HTML and CSS</h1>
             <h2>Учимся создавать сайты</h2>
             <img src="" alt="">     
@@ -37,7 +94,7 @@
                     </form>
                 </div>
                 <div class="images">
-                    <img src="" alt="">
+                    <img src="" class="img" alt="">
                     <img src="" alt="">
                     <img src="" alt="">
                 </div>
@@ -94,6 +151,5 @@
 
  <!-- Домашнее задание
     Сделать черновую HTML разметку для сайта: https://149842033.v2.pressablecdn.com/wp-content/uploads/2019/03/sensive-free-html-website-templates.jpg
-    
-
+    Можно использовать шаблоны из фигма
 -->

@@ -15,6 +15,9 @@
 
         .horizontal{
             height: 75px;
+            width: 800px;
+            margin: 0px auto;
+            
         }
         .horizontal ul{
             height: 75px;
@@ -27,20 +30,61 @@
         .horizontal ul li{
             height: 100%;
         }
-        .horizontal ul li a{
+        .horizontal ul li a, .vertical ul li a{
             color:white;
             font-family: sans-serif;
             text-decoration: none;
             font-size: 2rem;
             display: flex;
             align-items: center;
-
             padding: 0px 10px;
             height: 100%;
         }
 
-        .horizontal ul li a:hover{
+       ul li a:hover{
             background-color: #482c3d;
+
+        }
+
+        .vertical{
+            margin-top: 100px;
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .vertical ul{
+            /* height: 75px; */
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap:20px;
+            padding: 0px;
+        }
+        .vertical ul li{
+            height: 45px;
+            width: 100%;
+        }
+        .vertical ul li a{
+            width: 100%;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .submenu{
+            background-color: #AC3931;
+            display: none;
+        }
+        .subnav{
+            height: 75px;
+        }
+        .subnav:hover .submenu{
+            display: block;
         }
     </style>
 </head>
@@ -48,7 +92,13 @@
     <nav class="horizontal">
         <ul>
             <li><a href="">О нас</a></li>
-            <li><a href="">Услуги</a></li>
+            <li><div class="subnav"><a href="">Услуги</a>
+                <div class="submenu">
+                    <a href="">услуга 1</a>
+                    <a href="">услуга 2</a>
+                    <a href="">услуга 3</a>
+                </div>
+            </div></li>
             <li><a href="">Контакты</a></li>
         </ul>
     </nav>

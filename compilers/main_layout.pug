@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        block title
+        block scripts 
+        link(rel="stylesheet", href="style.css")
+
+    body 
+        header 
+            h1 Site name 
+            h2 Learning Pug
+        nav 
+            a(href="index.html") Main Page
+            a(href="page2.html") Page 2
+        main 
+            .container 
+            block content
+        footer 
+            h3 Copyright    

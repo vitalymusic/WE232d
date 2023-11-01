@@ -1,0 +1,21 @@
+//- Mixins
+
+include components/images
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="style.css") 
+    body
+        h1 Hello World! 
+        h2 I'm Pug!!! 
+        .container 
+            h3 Images 
+            +images
+        .container
+            h3 images2
+            +images        
+           

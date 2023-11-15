@@ -1,0 +1,57 @@
+<script>
+    // if(){
+
+    // }
+    // 0>14 = Zaprezheno;15>18 - ogranochen vivod;vse ostaljnije mozhno
+        let age=30;
+
+
+        // if(age>18){
+        //     document.write(`Vhod razreshen`); //if true
+        // }else{
+        //     document.write(`Vhod ne razreshen`); //if false
+        // }
+
+         if(age<=14){
+            document.write(`Vhod ne razreshen`); //if true
+        }else if(age >=15 && age <18) {  //  (age >=15 || age >18)
+            document.write(`Vhod razreshen no s ogranochenijami`);
+        }else{
+            document.write(`Vhod razreshen`);
+        }
+
+        let color = 51;
+
+
+        document.write(`
+            <h1 style="color:${color>50?"red":"blue"}"> Color of element is: ${color>50?"red":"blue"}</h1>
+        `);
+
+        
+
+        let temp= +propmt("Vvedite temp na ulice"),
+            wind= +prompt("vvedite Skorostj vetra m/s"),
+            osadki= prompt("vvedite Nalicija osadkov"),
+            out;
+
+            if(osadki=="dozhdj" || osadki=="sneg"){
+                osadki= true;
+            }else{
+                osadki= false;
+            }
+
+        
+
+        if(temp>20 && wind<10){
+            out="Pogoda tjeplaja";
+        }else if(temp<20 && temp>10 && osadki==true){
+            out = "Teplo no idet dozhdj. Vozjmite zont";
+        }else if(temp<20 && temp>10 && wind>7){
+            out = "Odenjtesj potepleje, tak kak na ulice siljnij veter";
+        }
+
+
+
+
+
+</script>

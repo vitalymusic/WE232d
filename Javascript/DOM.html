@@ -26,14 +26,18 @@
     <script>
 
         let items = ["Mercedes","Audi","Ford","BMW"];
-
+        let itemCl = 1;
         for (item of items){
-            document.querySelector(".container").innerHTML = `
-            <div class="item">
+            document.querySelector(".container").innerHTML += `
+            <div class="item" id="item${itemCl++}">
                 <h1>${item}</h1>    
             </div>    
             `;
         }
+
+        document.querySelector("#item1").style.backgroundColor = "#2c18db";
+        document.querySelector("#item1").style.color = "#fff";
+        document.querySelector("#item1").style.textAlign = "center";
 
     </script>
 </body>

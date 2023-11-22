@@ -15,13 +15,21 @@
             width: 300px;
             height: 300px;
         }
+        img{
+            width: 400px;
+        }
+        .red{
+            background-color:red !important;
+        }
+
+
     </style>
 </head>
 <body>
     <div class="container">
        
     </div>
-
+    <img src="" alt="">
 
     <script>
 
@@ -35,10 +43,71 @@
             `;
         }
 
+        // First element
         document.querySelector("#item1").style.backgroundColor = "#2c18db";
         document.querySelector("#item1").style.color = "#fff";
         document.querySelector("#item1").style.textAlign = "center";
 
+         // Second element
+         document.querySelector("#item2").style.backgroundColor = "#f5e942";
+        document.querySelector("#item2").style.color = "#fff";
+        document.querySelector("#item2").style.textAlign = "center";
+
+         // Third element
+         document.querySelector("#item3").style.backgroundColor = "#f542c8";
+        document.querySelector("#item3").style.color = "#fff";
+        document.querySelector("#item3").style.textAlign = "center";
+
+         // Fourth element
+         document.querySelector("#item4").style.backgroundColor = "#f78605";
+        document.querySelector("#item4").style.color = "#fff";
+        document.querySelector("#item4").style.textAlign = "center";
+
+
+
+        // Na neskoljko elementov 
+
+        let divs = document.querySelectorAll('.item');
+
+        console.log(divs);
+
+        for(div of divs){
+            div.style.width=`${300+100}px`;
+
+        }
+
+        let image1 = document.querySelector("img");
+        image1.setAttribute("src","https://www.bmw.lv/content/dam/bmw/common/all-models/3-series/sedan/2022/navigation/bmw-3-series-sedan-lci-modelfinder.png");
+        image1.setAttribute("alt",items[3]);
+
+
+        document.querySelector("#item1").remove();
+
+
+       document.body.style.background = document.querySelector("#item3").style.backgroundColor;
+
+    //    alert(image1.getAttribute("alt"));
+
+
+    for(div of divs){
+            div.classList.add('red');
+            div.classList.remove('red');
+
+            // div.onclick = function(){
+            //     this.classList.toggle('red');
+            // }
+
+            // Strelochnije funkcii
+
+            div.onclick = (e)=>{
+                console.log(e.target);
+                e.target.classList.toggle('red');
+            }
+
+        }
+    
+
+        
     </script>
 </body>
 </html>

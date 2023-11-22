@@ -27,9 +27,6 @@
             let creditAmount = +document.querySelector('#creditAmount').value,
             months = +document.querySelector('#months').value,
             percentage = document.querySelector('#percentage').value/100;
-
-
-
             let monthAmount = creditAmount/months+(creditAmount*percentage/months);
 
             if(creditAmount == 0 && months == 0){
@@ -42,7 +39,7 @@
             // console.log(answer);
 
 
-            
+
             let answer = `<table border="1" width="50%">
                            <tr>
                                 <td>Month</td>

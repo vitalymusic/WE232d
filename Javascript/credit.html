@@ -32,11 +32,17 @@
 
             let monthAmount = creditAmount/months+(creditAmount*percentage/months);
 
+            if(creditAmount == 0 && months == 0){
+                document.querySelector('#creditAmount').style.background = "red";
+                document.querySelector('#months').style.background = "red";
+                return
+            }
 
             // answer = monthAmount.toFixed(2);
             // console.log(answer);
 
 
+            
             let answer = `<table border="1" width="50%">
                            <tr>
                                 <td>Month</td>
@@ -62,7 +68,6 @@
              }  
              answer+=`<table>`; 
              answer+=`Total Amount of credit: ${(monthAmount*months).toFixed(2)}`; 
-                
               document.querySelector('.result').innerHTML = answer;  
 
         }

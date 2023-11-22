@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid red;;
+            padding: 30px;
+            margin: 30px;
+        }
+        .form{
+
+        }
+        .result{
+            background-color: yellow;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <input type="number" name="number1" id="num1">
+        <input type="number" name="number2" id="num2">
+        <div class="buttons">
+            <button onclick="sum()">+</button>
+            <button onclick="">-</button>
+            <button onclick="">*</button>
+            <button onclick="">/</button>
+        </div>
+        
+    </div>
+    <div class="result" id="result">
+
+    </div>
+
+    <script>
+        // +
+
+        function sum(){
+            let num1 = +document.querySelector('#num1').value;
+            let num2 = +document.querySelector('#num2').value;
+            document.querySelector('#result').innerHTML = `Result is: ${num1+num2}!`;
+            //console.log(num1,num2);
+        }
+
+
+        // -
+
+        function minus(){
+
+        }
+
+        // *
+
+        function umnozhenije(){
+
+        }
+
+        // /
+        function delenije(){
+
+        }
+
+    </script>
+</body>
+</html>

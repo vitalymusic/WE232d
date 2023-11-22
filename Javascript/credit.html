@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form">
+            <input type="text" name="creditAmount" id="creditAmount">
+            <input type="text" name="months" id="months">
+            <select name="percentage" id="percentage">
+                <option value="3">3%</option>
+                <option value="5">5%</option>
+                <option value="7">7%</option>
+            </select>
+            <button onclick="countCredit()">OK</button>
+
+    </div>
+    <div class="result">
+       
+    </div>
+
+
+    <script>
+        function countCredit(){
+            let creditAmount = +document.querySelector('#creditAmount').value,
+            months = +document.querySelector('#months').value,
+            percentage = document.querySelector('#percentage').value/100;
+
+
+
+            let monthAmount = creditAmount/months+(creditAmount*percentage/months);
+
+
+            // answer = monthAmount.toFixed(2);
+            // console.log(answer);
+
+
+            let answer = `<table>
+                           <tr>
+                                <td>Month</td>
+                                <td>Credit Sum</td>
+                                <td>Credit Percent</td>
+                                <td>Credit Sum</td>
+                            </tr> 
+                `;
+
+
+             for(let i = 1;i<=months;i++){
+
+                answer+=`
+                        <tr>
+                                <td>${i}. </td>
+                                <td>${(creditAmount / months).toFixed(2)}</td>
+                                <td>${(creditAmount*percentage/months).toFixed(2)}</td>
+                                <td>${(monthAmount).toFixed(2)}</td>
+                        </tr> 
+                
+                `;
+
+             }  
+             answer+=`<table>`; 
+             answer+=`Total Amount of credit: ${(monthAmount*months).toFixed(2)}`; 
+                
+              document.querySelector('.result').innerHTML = answer;  
+
+        }
+
+
+       
+    </script>
+</body>
+</html>

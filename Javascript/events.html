@@ -36,7 +36,6 @@
 
         for(image of images){
             image.addEventListener("mouseover",function(e){
-                console.log(e);
                 let source = e.target.getAttribute("src");
                 document.querySelector("#bigImage").setAttribute("src",source);
             })

@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="text" id="title">
     <div class="button" draggable="true">1</div>
     <div class="button">2</div>
     <div class="button">3</div>
@@ -17,7 +18,18 @@
     <div class="dropzone">
         drop here
     </div>
-
+    <div class="calc">
+        <input type="number" name="eur" id="">
+        <input type="number" name="usd" id="" disabled>
+    </div>
+    <div class="image">
+        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="" width="100px">
+        <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" alt="" width="100px">
+        <img src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1700265600&semt=ais" alt="" width="100px">
+    </div>
+    <div>
+        <img src="" alt="" width="75%" style="margin:auto">
+    </div>
     <script>
         let btn1 = document.querySelector('.button');
         let btn2 = btn1.nextElementSibling;
@@ -51,6 +63,40 @@
             e.target.style.background = "red";
         }
     })
+
+
+    document.querySelector('#title').addEventListener("keyup",function(e){
+        document.title = e.target.value;
+    })
+
+    // mouseOver
+    //mouseLeave
+    // mouseEnter
+
+    // Sdelajte Kaljkuljator valut, kotorij perevodit USD v EUR pri vvode summi v input
+
+    let eurInput = document.querySelector("input[name='eur']"),
+    usdInput = document.querySelector("input[name='usd']");
+
+    eurInput.addEventListener("keyup", function(){
+        if(eurInput.value < 0){
+           return false
+        }
+        usdInput.value = (eurInput.value * 1.0982049).toFixed(2);
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

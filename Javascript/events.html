@@ -28,9 +28,23 @@
         <img src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1700265600&semt=ais" alt="" width="100px">
     </div>
     <div>
-        <img src="" alt="" width="75%" style="margin:auto">
+        <img id="bigImage" alt="" width="75%" style="margin:auto">
     </div>
     <script>
+        // Kartinki
+        let images = document.querySelectorAll('.image img');
+
+        for(image of images){
+            image.addEventListener("mouseover",function(e){
+                console.log(e);
+                let source = e.target.getAttribute("src");
+                document.querySelector("#bigImage").setAttribute("src",source);
+            })
+        }
+
+
+
+
         let btn1 = document.querySelector('.button');
         let btn2 = btn1.nextElementSibling;
 

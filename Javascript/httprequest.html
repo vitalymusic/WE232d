@@ -1,0 +1,56 @@
+<script>
+
+    // Recieving data
+
+
+    // XMLHttprequest
+    // let url = "data.json";
+
+
+    // let xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function(){
+    //     if(xhr.readyState==4 && xhr.status == 200){
+    //         console.log(JSON.parse(xhr.response));
+    //     }
+    //     if(xhr.readyState==4 && xhr.status == 404){
+    //         alert("Error")
+    //     }
+    // }
+    // xhr.open("get",url);
+    // xhr.send();
+
+
+    // send data
+
+    let url2 = "https://jsonplaceholder.typicode.com/posts";    
+
+    function getData(url,data){
+
+        let xhr2 = new XMLHttpRequest();
+        xhr2.onreadystatechange = function(){
+        if(xhr2.readyState==4 && xhr2.status == 200){
+            data =  xhr2.response;
+        }
+        if(xhr2.readyState==4 && xhr2.status == 404){
+            alert("Error");
+            return false
+        }
+    }
+    xhr2.open("POST",url2);
+    xhr2.send(JSON.stringify());
+    return data
+    }
+
+
+    console.log(getData(url2,{
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+    }))
+
+    
+
+
+    
+
+</script>

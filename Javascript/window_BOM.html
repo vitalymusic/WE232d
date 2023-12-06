@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=§, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // history.back();
+
+        // Local Storage
+        let obj1 = {
+            user:"Vitaly",
+            email:"vitaly@animagorup.lv"
+        }
+
+        window.localStorage.setItem("webBrowser","Chrome");
+        window.localStorage.setItem("user",JSON.stringify(obj1));
+        window.localStorage.setItem("background","#03d3fc");
+        window.sessionStorage.setItem("user",JSON.stringify(obj1));
+        console.log(JSON.parse(window.localStorage.getItem("cart")));
+
+        if(localStorage.getItem("background")){
+            window.document.body.style.background = localStorage.getItem("background");
+        }
+
+
+
+    </script>
+</body>
+</html>

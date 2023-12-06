@@ -1,0 +1,84 @@
+<script>
+    let arr1 = ["123",456,true,["red","green"],{
+        user:"Vitaly",
+        email:"vitaly@animagorup.lv"
+    },{
+        user:"Andrey",
+        email:"andrey@animagorup.lv"
+    }];
+
+
+    console.log(arr1[1]);
+    console.log(arr1[3]);
+    document.write(arr1[3][1]);
+    document.write(arr1[4].user);
+    document.write(arr1[5].email);
+
+
+
+    let arr2 = [];
+
+    arr2.push({
+        user:"alex",
+        email:"alex@animagorup.lv"
+        });
+    arr2.push("text");
+    
+    arr2.pop();
+    arr2.unshift("text2",...arr1);  
+    arr2.shift(2);
+    let list = ["item1","item2","item3"];  
+
+    // list.map(function(item,number,arr){
+    //     console.log(item,number,arr)
+    // }) Old JS
+    let newArr2 = list.map(item => {
+        return item
+    });
+
+
+    let newArr = list.forEach((item,number,arr) => {
+        return item
+    });
+
+    let textString = "another";
+    let result = list.filter((item)=>{
+        if(item == textString){
+            return item
+        }
+    });
+
+    let bigArr = [...arr1,...arr2,...newArr2];
+
+    let bigArr2 = arr1.concat(arr2,newArr2);
+
+    let numbers = [1,15,11,2,16,45];
+
+    //  result = bigArr2.splice(0,4);
+
+    console.log(bigArr);
+    numbers.sort((a,b)=>{
+        return a-b
+    });
+        console.log(numbers);
+
+    let count = 0;
+    let interval1 = setInterval(()=>{
+        console.log(count);
+        count++;
+        if(count>10){
+            clearInterval(interval1);
+        }
+    },1000);
+
+
+
+    setTimeout(()=>{
+        alert("time is over")
+    },5000)
+
+    
+
+
+
+</script>

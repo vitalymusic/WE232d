@@ -49,8 +49,26 @@
                 inp1.classList.add("error");
             }else{
                 inp1.classList.replace("error","valid");
+                
             }
-        }
+
+            // let data = new FormData(form);
+
+            
+
+
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: new FormData(form),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+        .then((response) => response.json())
+        .then((json) => displayData(json));
+
+
+                }
 // pregMatch
 
     checkbox.onchange = function(e){
@@ -74,6 +92,11 @@
             subformDiv.style.display="none"
         }
     }
+
+
+    
+
+
     </script>
 </body>
 </html>

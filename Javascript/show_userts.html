@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .userGrid{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: auto auto auto;
+
+        }
+        .userGrid div{
+            border:2px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="userGrid">
+
+    </div>
+
+    <script>
+        let usersGrid = document.querySelector(".userGrid");
+
+        fetch('users.json')
+        .then((data)=>{
+            return data.json();
+        })
+        .then((data)=>{
+            listUsers(data);
+            return data;
+
+        }).then((data)=>{
+            document.querySelectorAll("button").forEach((button)=>{
+                button.onclick = function(e){
+                console.log(e.target.dataset.text);
+                showUser(e.target.dataset.text,data)
+            }
+            })
+            
+            
+            
+        })
+// picture
+// 
+
+        function listUsers(data){
+            data.forEach(element => {
+                usersGrid.innerHTML += `
+                <div class="user">
+                    <h3>${element.name}</h3>
+                    <p>${element.address}</p>
+                    <p>${element.email}</p>
+                    <p>${element.phone}</p>
+                    <img src="${element.picture}" width="100%">
+                    <button data-text="${element.index}">Read about user</button>
+                </div>    
+                
+                `;
+            });
+        }
+
+
+
+
+        function showUser(index,arr){
+            console.log(arr)
+            data = arr.filter((item)=>{
+                if(item.index == index){
+                    return item
+                }
+            })
+            console.log(data)
+            alert(data[0].about)
+        }
+    </script>
+</body>
+</html>

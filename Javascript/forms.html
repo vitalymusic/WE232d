@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            background-color: rgb(255, 72, 72);
+        }
+        .valid{
+            background-color: none;
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form</h1>
+
+
+    <form>
+        <input type="text" name="username">
+        <input type="checkbox" name="active" id="">Check me <br>   
+        <textarea name="descr" id="" cols="30" rows="10" disabled ></textarea><br>  
+        <input type="checkbox" name="subform" id="">Additional info<br>
+        <div class="subform">
+            <input type="color">
+            <input type="date">
+        </div>
+        <input type="submit">
+    </form>
+
+
+    <script>
+        let form = document.querySelector("form");
+        let checkbox = document.querySelector("input[name=\"active\"]");
+        let checkbox2 = document.querySelector("input[name=\"subform\"]");
+        let textarea = document.querySelector("textarea");
+
+        let subformDiv = document.querySelector(".subform");
+        subformDiv.style.display="none";
+        form.onsubmit = function(e){
+            e.preventDefault();
+            console.log(e);
+        let inp1 = form.querySelector("input[name=\"username\"]");
+            // let inp1 = e.srcElement[0]
+
+            if(inp1.value.length == 0){
+                inp1.classList.add("error");
+            }else{
+                inp1.classList.replace("error","valid");
+            }
+        }
+// pregMatch
+
+    checkbox.onchange = function(e){
+        console.log(e.target.checked);
+
+        if(e.target.checked){
+            textarea.removeAttribute('disabled');
+        }else{
+            textarea.setAttribute("disabled",true);
+        }
+    }
+    
+    
+    checkbox2.onchange = function(e){
+        console.log(e.target.checked);
+
+        if(e.target.checked){
+            subformDiv.style.display="block"
+            
+        }else{
+            subformDiv.style.display="none"
+        }
+    }
+    </script>
+</body>
+</html>

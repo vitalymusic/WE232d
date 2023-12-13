@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .images{
+
+            /* position:absolute;
+            left:0px;
+            z-index: -1;
+            width: 100%; */
+        }
+    </style>
+</head>
+<body>
+    <div class="imageSlider">
+        <div class="buttons">
+            <button class="left">Left</button>
+            <button class="right">Right</button>
+        </div>
+       
+        <div class="images">
+                <img src="https://picsum.photos/id/1/200/300" alt="">
+                <img src="https://picsum.photos/id/6/200/300" alt="">
+                <img src="https://picsum.photos/id/10/200/300" alt="">
+        </div>
+      
+    </div>
+    <div class="tabs">
+        <div class="tabButtons">
+            <button data-tab="tab1">Tab 1</button>
+            <button data-tab="tab2">Tab 2</button>
+            <button data-tab="tab3">Tab 3</button>
+        </div>
+        <div class="tabContent">
+            <div id="tab1">
+                <h1>Tab1</h1>
+            </div>
+            <div id="tab2">
+                <h1>Tab2</h1>
+            </div>
+            <div id="tab3">
+                <h1>Tab3</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // tabs
+        let tabButtons = document.querySelectorAll('.tabButtons button');
+
+        let tabs = document.querySelectorAll('.tabContent div');
+
+        function showTab(id){
+            for(tab of tabs){
+                tab.style.display = "none";
+            }
+            document.querySelector("div#"+id).style.display = "block";
+        }
+
+        for(button of tabButtons){
+            button.onclick = (e)=>{
+                let tab = e.target.dataset.tab;
+                showTab(tab);
+            }
+        }
+        tabButtons[0].click();
+        // showTab("tab1");
+
+
+
+        // Dialog сделать вывод в диалоговое окно
+
+
+    </script>
+
+    <script>
+
+        // Image Slider
+
+        let currImage = 0;
+       
+        images = document.querySelectorAll('.images img');
+        showImage(currImage);
+        
+        function showImage(number){
+            for (image of images){
+            image.style.display = "none";
+            }
+            images[number].style.display = "inline";
+        }
+        
+        document.querySelector(".left").onclick = ()=>{
+            currImage--;
+            if(currImage < 0){
+                 currImage = images.length - 1;   
+            }
+            showImage(currImage);
+            // console.log(currImage);
+        }
+
+        document.querySelector(".right").onclick = ()=>{
+            currImage++;
+            if(currImage > images.length - 1){
+                 currImage = 0;   
+            }
+            showImage(currImage);
+            // console.log(currImage);
+        }
+
+
+        function showNext(){
+            document.querySelector(".right").click();
+        }
+
+        setInterval(()=>{
+            showNext();
+        },3000)
+
+        // Image Slider, Tabs, Dialog Box
+    </script>
+</body>
+</html>

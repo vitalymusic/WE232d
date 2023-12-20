@@ -1,3 +1,3 @@
 export function makeAlert(message){
-    document.body.innerHTML = message
+    document.body.innerHTML += message
 }

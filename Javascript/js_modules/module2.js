@@ -19,8 +19,4 @@
  }
  tabButtons[0].click();
  // showTab("tab1");
-
-
-
- // Dialog сделать вывод в диалоговое окно
 }
